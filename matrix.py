@@ -1,7 +1,9 @@
 def MatrixConverter(numVars, equations):
 
     splitEquation = []
-    matrix = [[], []]
+    matrix = []
+    for i in range(numVars):
+        matrix.append([])
 
     for equation in equations:
         splitIndivEquation = []
