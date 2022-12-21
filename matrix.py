@@ -2,6 +2,9 @@ def MatrixConverter(numVars, equations):
 
     splitEquation = []
     matrix = []
+    resultVector = []
+    indivResult = []
+
     for i in range(numVars):
         matrix.append([])
 
@@ -12,8 +15,6 @@ def MatrixConverter(numVars, equations):
             splitIndivEquation.append(element)
         
         splitEquation.append(splitIndivEquation)
-
-    print(splitEquation)
 
     for equation in splitEquation:
         for element in equation:
@@ -30,6 +31,14 @@ def MatrixConverter(numVars, equations):
                 if equation[(equation.index(element) - 1)] == ' ':
                     matrix[splitEquation.index(equation)].append(1)
                 else:
-                    matrix[splitEquation.index(equation)].append(int(equation[(equation.index(element) - 1)]))        
+                    matrix[splitEquation.index(equation)].append(int(equation[(equation.index(element) - 1)]))  
+
+    for equation in splitEquation:
+        num = []
+        for i in range(len(equation)):
+            while equation[(-1 * (i + 1))] != ' ':
+                num.insert(0, equation[(-1 * (i + 1))])
+                      
+    print(num)
 
     return matrix
