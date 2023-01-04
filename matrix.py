@@ -3,7 +3,9 @@ def MatrixConverter(numVars, equations):
     splitEquation = []
     matrix = []
     resultVector = []
-    indivResult = []
+    reversedEquations = []
+    reversedResultVector = []
+    lenResultVector = []
     
 
     for i in range(numVars):
@@ -35,46 +37,22 @@ def MatrixConverter(numVars, equations):
                     matrix[splitEquation.index(equation)].append(int(equation[(equation.index(element) - 1)]))  
 
 
-    for equation in splitEquation:
-        print('Len: ' + str(len(equation)))   
-        for i in range(1, len(equation)):
-            num = []
-            print(equation[-1 * (i + 1)])
-            if equation[-1 * (i + 1)] == ' ' and i != 1:
-                # num.append(equation[(-1 * (i - 1))])
-                # num.insert(0, str(equation[(-1 * i)]))
-                num.append(equation[(-1 * i)])
-                print('If statement 1 for ' + equation[(-1 * i)])
+    for equation in equations:
+        reversedEquations.append(equation[::-1])
+
+    for i in range(len(reversedEquations)):
+        for j in range(len(reversedEquations[i])):
+            if reversedEquations[i][j] == ' ':
+                lenResultVector.append(j)
                 break
-            elif equation[-1 * (i + 1)] == ' ' and i == 1:
-                # num.insert(0, str(equation[(-1 * i)]))
-                num.append(equation[(-1 * i)])
-                print('If statement 2 for ' + equation[(-1 * i)])
-                break
-            else:
-                if i == 1:
-                    # num.insert(0, str(equation[(-1 * i)])) 
-                    num.append(equation[(-1 * i)])
-                    print('If statement 3 for ' + equation[(-1 * i)])
-                else: 
-                    # num.append(equation[(-1 * (i - 1))])
-                    # num.insert(0, str(equation[(-1 * i)])) 
-                    num.append(equation[(-1 * i)])
 
-                    print('If statement 4 for ' + equation[(-1 * i)])
+    for i in range(len(reversedEquations)):
+        reversedResultVector.append(reversedEquations[i][:(lenResultVector[i])])
 
-        # for i in range(1, len(equation)):
-        #     num = []
-        #     if equation[-1 * (i + 1)] != ' ':
-        #         num = [equation[-1 * i]] + num
-        #     elif equation[-1 * (i + 1)] == ' ':
-        #         num = [equation[-1 * i]] + num
-        #     else:
-        #         print('Error creating result vector')
-        finalNum = num.reverse()
+    for vector in reversedResultVector:
+        resultVector.append(int(vector[::-1]))
 
-        resultVector.append(finalNum)
-                
+                        
     #         while equation[(-1 * (i + 1))] != ' ':
     #             num.insert(0, equation[(-1 * (i + 1))])
     #             print('In while loop')
