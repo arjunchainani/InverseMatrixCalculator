@@ -12,29 +12,37 @@ def MatrixConverter(numVars, equations):
         matrix.append([])
 
     for equation in equations:
-        splitIndivEquation = []
+        pos = (i - 2)
+        for i in range(len(equation)):
+            if equation[i] == ' ' and equation[(i - 1)] == 'x':
+                while equation[pos] != ' ' and pos >= 0:
+                    pass
+                            
+    
+    # for equation in equations:
+    #     splitIndivEquation = []
         
-        for element in equation:
-            splitIndivEquation.append(element)
+    #     for element in equation:
+    #         splitIndivEquation.append(element)
         
-        splitEquation.append(splitIndivEquation)
+    #     splitEquation.append(splitIndivEquation)
 
-    for equation in splitEquation:
-        for element in equation:
-            if element == 'x':
-                if equation.index(element) == 0:
-                    matrix[splitEquation.index(equation)].append(1)
-                else: 
-                    if equation[(equation.index(element) - 1)] == ' ':
-                        matrix[splitEquation.index(equation)].append(1)
-                    else:
-                        matrix[splitEquation.index(equation)].append(int(equation[(equation.index(element) - 1)]))
+    # for equation in splitEquation:
+    #     for element in equation:
+    #         if element == 'x':
+    #             if equation.index(element) == 0:
+    #                 matrix[splitEquation.index(equation)].append(1)
+    #             else: 
+    #                 if equation[(equation.index(element) - 1)] == ' ':
+    #                     matrix[splitEquation.index(equation)].append(1)
+    #                 else:
+    #                     matrix[splitEquation.index(equation)].append(int(equation[(equation.index(element) - 1)]))
 
-            if element == 'y':
-                if equation[(equation.index(element) - 1)] == ' ':
-                    matrix[splitEquation.index(equation)].append(1)
-                else:
-                    matrix[splitEquation.index(equation)].append(int(equation[(equation.index(element) - 1)]))  
+    #         if element == 'y':
+    #             if equation[(equation.index(element) - 1)] == ' ':
+    #                 matrix[splitEquation.index(equation)].append(1)
+    #             else:
+    #                 matrix[splitEquation.index(equation)].append(int(equation[(equation.index(element) - 1)]))  
 
 
     for equation in equations:
