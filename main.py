@@ -1,6 +1,10 @@
 import matrix
+import invert
+import multiplier
 
 numVars = int(input('How many variables are in your system? '));
+
+variables = ['x', 'y', 'z', 'a', 'b', 'c', 'd']
 
 equations = []
 
@@ -11,5 +15,10 @@ resultList = matrix.MatrixConverter(numVars, equations)
 
 origMatrix = resultList[0]
 resultVector = resultList[1]
-print(origMatrix)
-print(resultVector)
+
+invertedMatrix = invert.matrixInversion(origMatrix, numVars)
+
+finalVector = multiplier.MatrixVectorProduct(invertedMatrix, resultVector, numVars)
+
+for i in range(numVars):
+    print('{} = {}'.format(variables[i], finalVector[i]))

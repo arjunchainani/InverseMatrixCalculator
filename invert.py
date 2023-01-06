@@ -23,5 +23,3 @@ def matrixInversion(matrix, numVars):
         else:
             return 'No solution'
 
-matrixInverted = matrixInversion([[1, 1], [1, 1]], 2)
-print(matrixInverted)
