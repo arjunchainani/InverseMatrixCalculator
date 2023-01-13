@@ -53,24 +53,15 @@ def matrixInversion(matrix, numVars):
         transposedMatrix[2][2] = matrix[2][2]
 
         adjunctMatrix = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-        minorMatrix1 = [[transposedMatrix[1][1], transposedMatrix[1][2]],
-                        [transposedMatrix[2][1], transposedMatrix[2][2]]]
-        minorMatrix2 = [[transposedMatrix[1][0], transposedMatrix[1][2]],
-                        [transposedMatrix[2][0], transposedMatrix[2][2]]]
-        minorMatrix3 = [[transposedMatrix[1][0], transposedMatrix[1][1]],
-                        [transposedMatrix[2][0], transposedMatrix[2][1]]]
-        minorMatrix4 = [[transposedMatrix[0][1], transposedMatrix[0][2]],
-                        [transposedMatrix[2][1], transposedMatrix[2][2]]]
-        minorMatrix5 = [[transposedMatrix[0][0], transposedMatrix[0][2]],
-                        [transposedMatrix[2][0], transposedMatrix[2][2]]]
-        minorMatrix6 = [[transposedMatrix[0][0], transposedMatrix[0][1]],
-                        [transposedMatrix[2][0], transposedMatrix[2][1]]]
-        minorMatrix7 = [[transposedMatrix[0][1], transposedMatrix[0][2]],
-                        [transposedMatrix[1][1], transposedMatrix[1][2]]]
-        minorMatrix8 = [[transposedMatrix[0][0], transposedMatrix[0][2]],
-                        [transposedMatrix[1][0], transposedMatrix[1][2]]]
-        minorMatrix9 = [[transposedMatrix[0][0], transposedMatrix[0][1]],
-                        [transposedMatrix[1][0], transposedMatrix[1][1]]]
+        minorMatrix1 = [[transposedMatrix[1][1], transposedMatrix[1][2]], [transposedMatrix[2][1], transposedMatrix[2][2]]]
+        minorMatrix2 = [[transposedMatrix[1][0], transposedMatrix[1][2]], [transposedMatrix[2][0], transposedMatrix[2][2]]]
+        minorMatrix3 = [[transposedMatrix[1][0], transposedMatrix[1][1]], [transposedMatrix[2][0], transposedMatrix[2][1]]]
+        minorMatrix4 = [[transposedMatrix[0][1], transposedMatrix[0][2]], [transposedMatrix[2][1], transposedMatrix[2][2]]]
+        minorMatrix5 = [[transposedMatrix[0][0], transposedMatrix[0][2]], [transposedMatrix[2][0], transposedMatrix[2][2]]]
+        minorMatrix6 = [[transposedMatrix[0][0], transposedMatrix[0][1]], [transposedMatrix[2][0], transposedMatrix[2][1]]]
+        minorMatrix7 = [[transposedMatrix[0][1], transposedMatrix[0][2]], [transposedMatrix[1][1], transposedMatrix[1][2]]]
+        minorMatrix8 = [[transposedMatrix[0][0], transposedMatrix[0][2]], [transposedMatrix[1][0], transposedMatrix[1][2]]]
+        minorMatrix9 = [[transposedMatrix[0][0], transposedMatrix[0][1]], [transposedMatrix[1][0], transposedMatrix[1][1]]]
         adjunctMatrix[0][0] = Determinant2x2(minorMatrix1)
         adjunctMatrix[0][1] = Determinant2x2(minorMatrix2)
         adjunctMatrix[0][2] = Determinant2x2(minorMatrix3)
