@@ -20,5 +20,8 @@ invertedMatrix = invert.matrixInversion(origMatrix, numVars)
 
 finalVector = multiplier.MatrixVectorProduct(invertedMatrix, resultVector, numVars)
 
+for i in range(len(finalVector)):
+    finalVector[i] = round(finalVector[i], 2)
+
 for i in range(numVars):
     print('{} = {}'.format(variables[i], finalVector[i]))
